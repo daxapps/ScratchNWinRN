@@ -68,7 +68,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <View>
-          <Text>Scratch N Win!</Text>
+          <Text style={styles.topText}>🍀🍀Scratch N Win!🍀🍀</Text>
         </View>
         <View style={styles.grid}>
           <View style={styles.itemrow}>
@@ -376,8 +376,13 @@ export default class App extends React.Component {
               />
             </TouchableOpacity>
           </View>
-        
         </View>
+        <Button onPress={() => {this.showAllItem()}} full success style={styles.button}>
+            <Text style={styles.buttonText}>Show All</Text>
+        </Button>
+        <Button onPress={() => {this.resetGame()}} full primary style={styles.button}>
+            <Text style={styles.buttonText}>Reset Game</Text>
+        </Button>
       </View>
     );
   }
@@ -400,5 +405,18 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "#000",
     minWidth: 70
+  },
+  button: {
+    marginTop: 20
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: "bold"
+  },
+  topText: {
+    fontSize: 30,
+    fontWeight: "bold",
+    marginVertical: 15
   }
 });
